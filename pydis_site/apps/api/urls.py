@@ -19,10 +19,6 @@ from .viewsets import (
 # https://www.django-rest-framework.org/api-guide/routers/#defaultrouter
 bot_router = DefaultRouter(trailing_slash=False)
 bot_router.register(
-    'filter-lists',
-    FilterListViewSet
-)
-bot_router.register(
     'bot-settings',
     BotSettingViewSet
 )
@@ -33,6 +29,10 @@ bot_router.register(
 bot_router.register(
     'documentation-links',
     DocumentationLinkViewSet
+)
+bot_router.register(
+    'filter-lists',
+    FilterListViewSet
 )
 bot_router.register(
     'infractions',
