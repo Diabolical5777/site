@@ -14,6 +14,7 @@ from rest_framework.validators import UniqueTogetherValidator
 
 from .models import (
     BotSetting,
+    BumpedThread,
     DeletedMessage,
     DocumentationLink,
     FilterList,
@@ -37,6 +38,16 @@ class BotSettingSerializer(ModelSerializer):
 
         model = BotSetting
         fields = ('name', 'data')
+
+
+class BumpedThreadSerializer(ModelSerializer):
+    """A class providing (de-)serialization of `BumpedThread` instances."""
+
+    class Meta:
+        """Metadata defined for the Django REST Framework."""
+
+        model = BumpedThread
+        fields = ('thread_id',)
 
 
 class DeletedMessageSerializer(ModelSerializer):

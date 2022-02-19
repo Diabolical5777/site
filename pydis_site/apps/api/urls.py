@@ -4,6 +4,7 @@ from rest_framework.routers import DefaultRouter
 from .views import HealthcheckView, RulesView
 from .viewsets import (
     BotSettingViewSet,
+    BumpedThreadViewSet,
     DeletedMessageViewSet,
     DocumentationLinkViewSet,
     FilterListViewSet,
@@ -21,6 +22,10 @@ bot_router = DefaultRouter(trailing_slash=False)
 bot_router.register(
     'bot-settings',
     BotSettingViewSet
+)
+bot_router.register(
+    'bumped-threads',
+    BumpedThreadViewSet
 )
 bot_router.register(
     'deleted-messages',
